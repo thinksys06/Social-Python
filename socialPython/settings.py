@@ -74,6 +74,8 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'socialPython.wsgi.application'
 
+LOGIN_REDIRECT_URL = 'socialPython_app:api'
+
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases

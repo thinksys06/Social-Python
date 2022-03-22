@@ -22,6 +22,6 @@ from socialPython_app import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('users/', include('socialPython_app.urls'))
+    path('api/', include('socialPython_app.urls'))
     
 ]

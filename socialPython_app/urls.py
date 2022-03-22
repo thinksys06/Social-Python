@@ -18,7 +18,15 @@ from django.urls import path
 from socialPython_app import views
 
 urlpatterns = [
+
+        # for showig the (user_list view)
+    path('show_user/', views.user_list.as_view()),
+    # for showing the (user_detail view)
+    path('show_user/<int:pk>', views.user_detail.as_view()),
     
-    path('show_list/', views.user_list.as_view()),
-    path('how_detail/', views.user_detail.as_view())
+    # for showig the (profile_list view)
+    path('show_profile/', views.profile_list.as_view()),
+    # for showing the (profile_detail view)
+    path('show_profile/<int:pk>', views.profile_detail.as_view())
+
 ]

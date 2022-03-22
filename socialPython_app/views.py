@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from socialPython_app.models import userModel
-from socialPython_app.serializers import userSerializer
+from socialPython_app.models import userModel, userProfileModel
+from socialPython_app.serializers import userProfileSerializer, userSerializer
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.decorators import api_view
@@ -21,6 +21,19 @@ class user_list(generics.ListCreateAPIView):
 class user_detail(generics.RetrieveUpdateDestroyAPIView):
     queryset= userModel.objects.all()
     serializer_class= userSerializer
+    authentication_classes=[BasicAuthentication]
+    permission_classes=[IsAuthenticated]
+
+
+class profile_list(generics.ListCreateAPIView):
+    queryset= userProfileModel.objects.all()
+    serializer_class = userProfileSerializer
+    authentication_classes=[BasicAuthentication]
+    permission_classes=[IsAuthenticated]
+
+class profile_detail(generics.RetrieveUpdateDestroyAPIView):
+    queryset= userProfileModel.objects.all()
+    serializer_class = userProfileSerializer
     authentication_classes=[BasicAuthentication]
     permission_classes=[IsAuthenticated]
 
