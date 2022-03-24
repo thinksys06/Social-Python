@@ -5,7 +5,7 @@ from django.db import models
 class userModel(models.Model):
     id = models.IntegerField(primary_key=True)
     name = models.CharField(max_length=20)
-    user_name = models.CharField(max_length=15, unique=True, default='SOME STRING')
+    user_name = models.CharField(max_length=15, unique=True)
     email = models.EmailField(max_length=60)
     address = models.CharField(max_length=30)
 
