@@ -9,7 +9,7 @@ class userProfileSerializer(serializers.ModelSerializer):
 
     def validate_gender(self, gender):
         if (re.match(" 'male' | 'female' ", gender) == None):
-            raise serializers.ValidationError("gender accepts only numeric values")
+            raise serializers.ValidationError("gender accepts only 'male|female' values")
         return gender
 
 class userSerializer(serializers.ModelSerializer):
